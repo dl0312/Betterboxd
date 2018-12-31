@@ -1,5 +1,5 @@
 import React from "react";
-import MovieDetailPresenter from "./MovieDetailPresenter";
+import { MovieDetailPresenter } from "./MovieDetailPresenter";
 import { moviesApi } from "../../api";
 
 export default class MovieDetailContainer extends React.Component {

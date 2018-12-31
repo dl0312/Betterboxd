@@ -1,5 +1,5 @@
 import React from "react";
-import TVDetailPresenter from "./TVDetailPresenter";
+import { TVDetailPresenter } from "./TVDetailPresenter";
 import { tvApi } from "../../api";
 
 export default class TVDetailContainer extends React.Component {
@@ -15,7 +15,9 @@ export default class TVDetailContainer extends React.Component {
   async componentDidMount() {
     try {
       const {
-        match: { params: id },
+        match: {
+          params: { id }
+        },
         history: { push }
       } = this.props;
       const parsedId = parseInt(id);

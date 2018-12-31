@@ -1,25 +1,34 @@
 import React from "react";
-import SearchPresenter from "./SearchPresenter";
+import { SearchPresenter } from "./SearchPresenter";
 import { moviesApi, tvApi } from "../../api";
 
 export default class SearchContainer extends React.Component {
   state = {
     movieResults: null,
     tvResults: null,
-    searchTerm: "aqua",
+    searchTerm: "",
     error: null,
-    loading: true
+    loading: false
   };
 
-  handleSubmit = () => {
+  handleSubmit = event => {
+    event.preventDefault();
     const { searchTerm } = this.state;
     if (searchTerm !== "") {
       this.searchByTerm(searchTerm);
     }
   };
 
+  handleOnChangeTerm = event => {
+    const {
+      target: { value }
+    } = event;
+    this.setState({ searchTerm: value });
+  };
+
   searchByTerm = async () => {
     const { searchTerm } = this.state;
+    this.setState({ loading: true });
     try {
       const {
         data: { results: movieResults }
@@ -28,7 +37,7 @@ export default class SearchContainer extends React.Component {
         data: { results: tvResults }
       } = await tvApi.search(searchTerm);
       console.log(movieResults, tvResults);
-      this.setState({ movieResults, tvResults, loading: true });
+      this.setState({ movieResults, tvResults });
     } catch (error) {
       this.setState({ error: error.message });
     } finally {
@@ -47,6 +56,7 @@ export default class SearchContainer extends React.Component {
         error={error}
         loading={loading}
         handleSubmit={this.handleSubmit}
+        handleOnChangeTerm={this.handleOnChangeTerm}
       />
     );
   }
