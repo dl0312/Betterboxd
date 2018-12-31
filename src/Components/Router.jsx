@@ -21,16 +21,16 @@ export default () => (
   <Router>
     <>
       <Header />
-      <Container>
-        <Switch>
+      <Switch>
+        <Route path="/movie/:id" component={MovieDetail} />
+        <Route path="/tv/:id" component={TVDetail} />
+        <Container>
           <Route path="/" exact component={Home} />
           <Route path="/tv" exact component={TV} />
           <Route path="/search" component={Search} />
-          <Route path="/movie/:id" component={MovieDetail} />
-          <Route path="/tv/:id" component={TVDetail} />
-          <Redirect from="*" to="/" />
-        </Switch>
-      </Container>
+        </Container>
+        <Redirect from="*" to="/" />
+      </Switch>
     </>
   </Router>
 );

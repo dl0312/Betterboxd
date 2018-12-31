@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { Section } from "Components/Section";
 import { Loader } from "Components/Loader";
 import { Poster } from "Components/Poster";
+import { Message } from "Components/Message";
 
 const Container = styled.div``;
 
@@ -63,6 +64,7 @@ export const HomePresenter = ({
           ))}
         </Section>
       )}
+      {error && <Message color="#e74c3c" text={error} />}
     </Container>
   );
 
