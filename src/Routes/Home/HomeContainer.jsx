@@ -22,7 +22,7 @@ export default class extends React.Component {
       const {
         data: { results: upcoming }
       } = await moviesApi.upcoming();
-      this.setState({ nowPlaying, popular, upcoming });
+      this.setState({ nowPlaying, popular, upcoming, loading: true });
     } catch (error) {
       this.setState({
         error: error.message

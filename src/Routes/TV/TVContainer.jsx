@@ -22,7 +22,7 @@ export default class TVContainer extends React.Component {
       const {
         data: { results: topRated }
       } = await tvApi.topRated();
-      this.setState({ airingToday, popular, topRated });
+      this.setState({ airingToday, popular, topRated, loading: true });
     } catch (error) {
       this.setState({ error: error.message });
     } finally {
