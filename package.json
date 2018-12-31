@@ -1,9 +1,15 @@
 {
   "name": "betterboxd",
   "version": "0.1.0",
+  "description": "Movie Discovery App (like Letterboxd) with React, ES6, THE MOVIE DB",
+  "main": "index.js",
+  "repository": "https://github.com/dl0312/Betterboxd",
+  "author": "dl0312 <leegun2003@gmail.com>",
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "dotenv": "^6.2.0",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
