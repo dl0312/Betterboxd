@@ -7,7 +7,6 @@
   "author": "dl0312 <leegun2003@gmail.com>",
   "license": "MIT",
   "private": true,
-  "homepage": "https://dl0312.github.io/betterboxd",
   "dependencies": {
     "axios": "^0.18.0",
     "dotenv": "^6.2.0",
