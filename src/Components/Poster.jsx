@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import NoImage from "asset/popcorn.png";
+import NoImage from "../asset/popcorn.png";
 
 const Container = styled.div`
   font-size: 0.8rem;
