@@ -41,7 +41,7 @@ export default class TVDetailContainer extends React.Component {
   }
 
   render() {
-    console.log(this.props);
+    console.log(this.state.result);
     const { result, error, loading } = this.state;
     return (
       <TVDetailPresenter result={result} error={error} loading={loading} />

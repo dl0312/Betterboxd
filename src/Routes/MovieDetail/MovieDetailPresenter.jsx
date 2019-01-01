@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import Helmet from "react-helmet";
 import { Loader } from "Components/Loader";
 import NoImage from "asset/popcorn.png";
 
@@ -80,6 +81,9 @@ export const MovieDetailPresenter = ({ result, error, loading }) =>
     <Loader />
   ) : (
     <Container>
+      <Helmet>
+        <title>{result.title} | Betterboxd</title>
+      </Helmet>
       <Backdrop
         bgImage={`https://image.tmdb.org/t/p/original${result.backdrop_path}`}
       />
@@ -92,7 +96,7 @@ export const MovieDetailPresenter = ({ result, error, loading }) =>
           }
         />
         <Data>
-          <Title>{result.title ? result.title : result.original_title}</Title>
+          <Title>{result.title}</Title>
           <ItemContainer>
             <Item>{result.release_date.substring(0, 4)}</Item>
             <Divider>•</Divider>
